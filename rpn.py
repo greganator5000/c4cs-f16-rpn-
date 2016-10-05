@@ -1,0 +1,36 @@
+import sys
+
+def calculate(myarg):
+    stack = list()
+    for token in myarg.split():
+        if token == '+':
+            arg2 = stack.pop
+            arg1 = stack.pop
+            result = arg1 + arg2
+            stack.append(result)
+        elif token == '-':
+            arg2 = stack.pop
+            arg1 = stack.pop
+            result = arg1 - arg2
+            stack.append(result)
+        elif token == '*':
+            arg2 = stack.pop
+            arg1 = stack.pop
+            result = arg1 * arg2
+            stack.append(result)
+        elif token == '/':
+            arg2 = stack.pop
+            arg1 = stack.pop
+            result = arg1 * arg2
+            stack.append(result)
+        else :
+            print "shit wront instruction!"
+        print(stack)
+    return stack.pop()
+
+def main():
+    while True:
+        calculate(input("rpn calc>"))
+
+if __name__ == "__main__" :
+    main()
